@@ -34,24 +34,43 @@
       <h1 class="library-header__title">LIBRARY</h1>
       <div class="library-header__statistics-block">
         <h2 class="library-header__statistics-title">STATISTICS</h2>
-        <p class="library-header__statistics-text"></p>
-        <p class="library-header__statistics-text"></p>
+        <p class="library-header__statistics-text">Total: 5 books</p>
+        <p class="library-header__statistics-text">Read: 3 books</p>
       </div>
     </div>
     <div class="library-body">
       <div class="library-body__header">
         <button class="library-body__add-book-btn" type="button">
-          Add Book
+          Add a Book
         </button>
       </div>
-      <div class="library-body__booklist">
-        <div class="library-body__booklist-header">
-          <h3 class="library-body__booklist-header-title">Title</h3>
-          <h3 class="library-body__booklist-header-author">Author</h3>
-          <h3 class="library-body__booklist-header-pages">Pages</h3>
-          <h3 class="library-body__booklist-header-status">Status</h3>
-        </div>
-        <div class="library-body__booklist-body"></div>
+      <div class="library-body__table-wrapper">
+        <table class="library-body__table">
+          <thead>
+            <tr class="library-body__table-row">
+              <th class="library-body__table-element library-body__table-title">
+                Title</th>
+              <th class="library-body__table-element library-body__table-title">
+                Author</th>
+              <th class="library-body__table-element library-body__table-title">
+                Pages</th>
+              <th class="library-body__table-element library-body__table-title">
+                Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="library-body__table-row">
+              <td class="library-body__table-element">Title</td>
+              <td class="library-body__table-element">Author</td>
+              <td class="library-body__table-element">Pages</td>
+              <td class="library-body__table-element">
+                <button class="library-body__status-btn" type="button">
+                  Not read
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </main>
