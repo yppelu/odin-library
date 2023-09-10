@@ -25,7 +25,19 @@
       </div>
       <div class="header__change-theme-block">
         <p class="header__change-theme-text">Change theme:</p>
-        <button class="header__change-theme-btn" type="button"></button>
+        <button class="header__change-theme-btn" type="button">
+          <svg class="header__change-theme-sun-icon" viewBox="0 0 24 24"
+            fill="#9CA3AF">
+            <path
+              d="M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,2L14.39,5.42C13.65,5.15 12.84,5 12,5C11.16,5 10.35,5.15 9.61,5.42L12,2M3.34,7L7.5,6.65C6.9,7.16 6.36,7.78 5.94,8.5C5.5,9.24 5.25,10 5.11,10.79L3.34,7M3.36,17L5.12,13.23C5.26,14 5.53,14.78 5.95,15.5C6.37,16.24 6.91,16.86 7.5,17.37L3.36,17M20.65,7L18.88,10.79C18.74,10 18.47,9.23 18.05,8.5C17.63,7.78 17.1,7.15 16.5,6.64L20.65,7M20.64,17L16.5,17.36C17.09,16.85 17.62,16.22 18.04,15.5C18.46,14.77 18.73,14 18.87,13.21L20.64,17M12,22L9.59,18.56C10.33,18.83 11.14,19 12,19C12.82,19 13.63,18.83 14.37,18.56L12,22Z" />
+          </svg>
+          <svg class="header__change-theme-moon-icon" fill="none"
+            viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              stroke="#9CA3AF"
+              d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
       </div>
     </div>
   </header>
@@ -56,16 +68,27 @@
                 Pages</th>
               <th class="library-body__table-element library-body__table-title">
                 Status</th>
+              <td class="library-body__table-element"></td>
             </tr>
           </thead>
           <tbody>
             <tr class="library-body__table-row">
-              <td class="library-body__table-element">Title</td>
-              <td class="library-body__table-element">Author</td>
-              <td class="library-body__table-element">Pages</td>
+              <td class="library-body__table-element">
+                The Lord of the Rings: The Fellowship of the Ring
+              </td>
+              <td class="library-body__table-element">
+                John Ronald Reuel Tolkien
+              </td>
+              <td class="library-body__table-element">1178</td>
               <td class="library-body__table-element">
                 <button class="library-body__status-btn" type="button">
                   Not read
+                </button>
+              </td>
+              <td class="library-body__table-element">
+                <button class="library-body__remove-book-btn">
+                  <img class="library-body__remove-book-icon"
+                    src="./images/trash-can.svg" alt="Remove the book">
                 </button>
               </td>
             </tr>
