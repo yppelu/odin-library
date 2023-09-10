@@ -61,22 +61,10 @@ h6 {
 
 /* Overall styles */
 
-body {
-  background-color: var(--body-bg-color);
-  color: var(--paragraph-color);
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.hidden {
-  display: none;
-}
-
 .light-mode {
   --block-border-color: #E5E7EB;
   --block-shadow-color: #E5E7EB;
-  --body-bg-color: #F9FAFB;
+  --body-bg-color: #F9F9F9;
   --heading-color: #1F2937;
   --paragraph-color: #374151;
   --section-color: #FFFFFF;
@@ -98,6 +86,18 @@ body {
   --status-btn-border-color: none;
   --status-btn-text-color: #E5E7EB;
   --table-border-color: #6B7280;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  color: var(--paragraph-color);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Header styles */
