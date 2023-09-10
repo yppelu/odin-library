@@ -103,6 +103,7 @@ body {
 /* Header styles */
 
 .header {
+  background-color: var(--section-color);
 
   display: flex;
   justify-content: center;
