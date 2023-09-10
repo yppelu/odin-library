@@ -62,11 +62,15 @@ h6 {
 
 :root {
   --border-color: #E5E7EB;
+  --paragraph-color: #374151;
+  --heading-color: #1F2937;
 }
 
 body {
+  color: var(--paragraph-color);
   font-family: Roboto, Arial, sans-serif;
   font-size: 1rem;
+  font-weight: 400;
 }
 
 .wrapper {
@@ -102,7 +106,10 @@ body {
   height: 100%;
 }
 
-.header__title {}
+.header__title {
+  color: var(--heading-color);
+  font-weight: 500;
+}
 
 .header__change-theme-block {
   display: flex;
