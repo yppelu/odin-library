@@ -76,11 +76,6 @@ body {
   font-weight: 400;
 }
 
-.wrapper {
-  margin: 0 auto;
-  width: min(1200px, 95%);
-}
-
 /* Header styles */
 
 .header {
@@ -131,3 +126,37 @@ body {
   height: 1.5rem;
   width: 1.5rem;
 }
+
+/* Main styles */
+
+.main {}
+
+.library-header {}
+
+.library-header__title {}
+
+.library-header__statistics-block {}
+
+.library-header__statistics-title {}
+
+.library-header__statistics-text {}
+
+.library-body {}
+
+.library-body__header {}
+
+.library-body__add-book-btn {}
+
+.library-body__booklist {}
+
+.library-body__booklist-header {}
+
+.library-body__booklist-header-title {}
+
+.library-body__booklist-header-author {}
+
+.library-body__booklist-header-pages {}
+
+.library-body__booklist-header-status {}
+
+.library-body__booklist-body {}
