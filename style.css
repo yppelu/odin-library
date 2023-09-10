@@ -57,3 +57,64 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+/* Overall styles */
+
+:root {
+  --border-color: #E5E7EB;
+}
+
+body {
+  font-size: 1rem;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: min(1200px, 95%);
+}
+
+/* Header styles */
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 5px;
+  height: calc(2rem + 10px);
+  width: min(1200px, 95%);
+}
+
+.header__title-block {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header__title-image {
+  height: 100%;
+}
+
+.header__title {}
+
+.header__change-theme-block {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.header__change-theme-text {}
+
+.header__change-theme-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  height: 1.5rem;
+  width: 1.5rem;
+}
