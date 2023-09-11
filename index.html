@@ -71,28 +71,7 @@
               <td class="library-body__table-element"></td>
             </tr>
           </thead>
-          <tbody>
-            <tr class="library-body__table-row">
-              <td class="library-body__table-element">
-                The Lord of the Rings: The Fellowship of the Ring
-              </td>
-              <td class="library-body__table-element">
-                John Ronald Reuel Tolkien
-              </td>
-              <td class="library-body__table-element">1178</td>
-              <td class="library-body__table-element">
-                <button class="library-body__status-btn" type="button">
-                  Not read
-                </button>
-              </td>
-              <td class="library-body__table-element">
-                <button class="library-body__remove-book-btn">
-                  <img class="library-body__remove-book-icon"
-                    src="./images/trash-can.svg" alt="Remove the book">
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
     </div>
@@ -100,14 +79,16 @@
   <div class="add-book-form-wrapper hidden">
     <form class="add-book-form">
       <label class="add-book-form__label"> Book title:
-        <input class="add-book-form__input" type="text" name="book-title">
+        <input class="add-book-form__input" type="text" name="book-title"
+          required>
       </label>
       <label class="add-book-form__label"> Book author:
-        <input class="add-book-form__input" type="text" name="book-author">
+        <input class="add-book-form__input" type="text" name="book-author"
+          required>
       </label>
       <label class="add-book-form__label"> Number of pages:
         <input class="add-book-form__input" type="number" name="book-pages"
-          min="0">
+          required min="0">
       </label>
       <label class="add-book-form__label"> Have you read it?
         <input class="add-book-form__checkbox" type="checkbox"

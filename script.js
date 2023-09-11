@@ -3,6 +3,8 @@ const changeThemeButton = document.querySelector('.header__change-theme-btn');
 const changeThemeSunIcon = document.querySelector('.header__change-theme-sun-icon');
 const changeThemeMoonIcon = document.querySelector('.header__change-theme-moon-icon');
 
+/* Color scheme management */
+
 setInitialColorScheme();
 
 changeThemeButton.addEventListener('click', () => {
@@ -55,4 +57,108 @@ function setInitialColorScheme() {
   }
 
   localStorage.setItem('colorScheme', colorSchemeName);
+}
+
+
+/* Library management */
+
+const addBookButton = document.querySelector('.library-body__add-book-btn');
+const addBookForm = document.querySelector('.add-book-form');
+const addBookFormWrapper = document.querySelector('.add-book-form-wrapper');
+const newBookTitle = document.querySelector('.add-book-form__input[name="book-title"]');
+const newBookAuthor = document.querySelector('.add-book-form__input[name="book-author"]');
+const newBookPages = document.querySelector('.add-book-form__input[name="book-pages"]');
+const newBookIsRead = document.querySelector('.add-book-form__checkbox[name="book-is-read"]');
+
+const libraryTableBody = document.querySelector('.library-body__table>tbody');
+const library = [];
+
+addBookButton.addEventListener('click', () => {
+  addBookFormWrapper.classList.remove('hidden');
+});
+
+addBookForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  let isRead = (newBookIsRead.checked) ? true : false;
+  const newBook = new Book(newBookTitle.value, newBookAuthor.value, newBookPages.value, isRead);
+  addBookToLibrary(newBook);
+
+  updateLibraryDisplay();
+  addBookFormWrapper.classList.add('hidden');
+  addBookForm.reset();
+});
+
+addBookForm.addEventListener('reset', () => {
+  addBookFormWrapper.classList.add('hidden');
+});
+
+function Book(title, author, pages, isRead) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.isRead = isRead;
+}
+
+function addBookToLibrary(book) {
+  library.push(book);
+}
+
+function clearLibraryTableBody() {
+  libraryTableBody.innerHTML = '';
+}
+
+function createRemoveBookTableElement() {
+  const tableElement = document.createElement('td');
+  tableElement.classList.add('library-body__remove-book-btn');
+
+  const removeButton = document.createElement('button');
+  removeButton.classList.add('library-body__remove-book-btn');
+  removeButton.setAttribute('type', 'button');
+
+  const removeIcon = document.createElement('img');
+  removeIcon.classList.add('library-body__remove-book-icon');
+  removeIcon.setAttribute('src', './images/trash-can.svg');
+  removeIcon.setAttribute('alt', 'Remove the book');
+
+  removeButton.append(removeIcon);
+  tableElement.append(removeButton);
+
+  return tableElement;
+}
+
+function createTableElement(book, bookParameter) {
+  let element = document.createElement('td');
+  element.classList.add('library-body__table-element');
+
+  if (bookParameter === 'isRead') {
+    let isReadButton = document.createElement('button');
+    isReadButton.classList.add('library-body__status-btn');
+    isReadButton.setAttribute('type', 'button');
+    isReadButton.textContent = book[bookParameter] ? 'Read' : 'Not read';
+    element.append(isReadButton);
+  } else {
+    element.textContent = book[bookParameter];
+  }
+
+  return element;
+}
+
+function createTableRow(book) {
+  const tableRow = document.createElement('tr');
+  tableRow.classList.add('library-body__table-row');
+
+  for (let bookParameter in book) {
+    tableRow.append(createTableElement(book, bookParameter));
+  }
+  tableRow.append(createRemoveBookTableElement());
+
+  return tableRow;
+}
+
+function updateLibraryDisplay() {
+  clearLibraryTableBody();
+  library.forEach((book) => {
+    libraryTableBody.append(createTableRow(book));
+  });
 }
