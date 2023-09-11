@@ -227,10 +227,10 @@ function saveToggleIsReadButton(button) {
 
 function updateDisplayAfterBookAddition() {
   const bookTableRow = createBookTableRow(library[library.length - 1]);
-  libraryTableBody.append(bookTableRow);
+  libraryTableBody.prepend(bookTableRow);
 }
 
 function updateDisplayAfterBookRemoval(bookIndex) {
-  const removedBookRow = libraryTableBody.children[bookIndex];
+  const removedBookRow = libraryTableBody.children[library.length - bookIndex];
   libraryTableBody.removeChild(removedBookRow);
 }
