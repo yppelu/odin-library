@@ -160,8 +160,6 @@ body {
   height: 100%;
 }
 
-.header__title-image {}
-
 .header__title {
   color: var(--heading-color);
   font-weight: 500;
@@ -176,8 +174,6 @@ body {
   height: 100%;
 }
 
-.header__change-theme-text {}
-
 .header__change-theme-btn {
   appearance: none;
   background-color: transparent;
@@ -190,8 +186,6 @@ body {
 .header__change-theme-sun-icon:hover {
   fill: #374151;
 }
-
-.header__change-theme-moon-icon {}
 
 /* Main styles */
 
@@ -226,8 +220,6 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
 }
-
-.library-header__statistics-text {}
 
 .library-body {
   background-color: var(--section-color);
@@ -334,8 +326,6 @@ body {
   width: 1.5rem;
 }
 
-.library-body__remove-book-icon {}
-
 /* Add book Form Styles */
 
 .add-book-form-wrapper {
@@ -404,5 +394,3 @@ body {
 .add-book-form__cancel-btn {
   margin-right: 10px;
 }
-
-.add-book-form__submit-btn {}
