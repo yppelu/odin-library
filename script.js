@@ -117,12 +117,17 @@ addBookForm.addEventListener('submit', (e) => {
   updateDisplayAfterBookAddition();
 
   updateStatistics();
-  addBookFormWrapper.classList.add('hidden');
-  addBookForm.reset();
+  closeForm();
 });
 
 addBookForm.addEventListener('reset', () => {
   addBookFormWrapper.classList.add('hidden');
+});
+
+addBookFormWrapper.addEventListener('click', (e) => {
+  if (e.target.classList.contains('add-book-form-wrapper')) {
+    closeForm();
+  }
 });
 
 updateStatistics();
@@ -132,6 +137,11 @@ function Book(title, author, pages, isRead) {
   this.author = author;
   this.pages = pages;
   this.isRead = isRead;
+}
+
+function closeForm() {
+  addBookFormWrapper.classList.add('hidden');
+  addBookForm.reset();
 }
 
 function createBook() {

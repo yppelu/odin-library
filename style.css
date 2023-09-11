@@ -340,7 +340,7 @@ body {
 
 .add-book-form-wrapper {
   backdrop-filter: blur(10px);
-  position: absolute;
+  position: fixed;
   inset: 0 0 0 0;
 }
 
