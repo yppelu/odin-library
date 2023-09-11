@@ -59,6 +59,38 @@ function setInitialColorScheme() {
   localStorage.setItem('colorScheme', colorSchemeName);
 }
 
+
+/* Statistics management */
+
+const totalBooks = document.querySelector('.library-header__statistics-total-books');
+const readBooks = document.querySelector('.library-header__statistics-read-books');
+
+function updateStatistics() {
+  const total = library.length;
+  const read = library.reduce((sum, book) => (book.isRead) ? sum + 1 : sum, 0);
+  updateStatisticsDisplay(total, read);
+}
+
+function updateStatisticsDisplay(total, read) {
+  switch (total) {
+    case 1:
+      totalBooks.textContent = 'Total: 1 book';
+      break;
+    default:
+      totalBooks.textContent = `Total: ${total} book`;
+      break;
+  }
+
+  switch (read) {
+    case 1:
+      readBooks.textContent = 'Read: 1 book';
+      break;
+    default:
+      readBooks.textContent = `Read: ${read} book`;
+      break;
+  }
+}
+
 /* Library management */
 
 const libraryTableBody = document.querySelector('.library-body__table>tbody');
@@ -84,6 +116,7 @@ addBookForm.addEventListener('submit', (e) => {
   library.push(createBook());
   updateDisplayAfterBookAddition();
 
+  updateStatistics();
   addBookFormWrapper.classList.add('hidden');
   addBookForm.reset();
 });
@@ -91,6 +124,8 @@ addBookForm.addEventListener('submit', (e) => {
 addBookForm.addEventListener('reset', () => {
   addBookFormWrapper.classList.add('hidden');
 });
+
+updateStatistics();
 
 function Book(title, author, pages, isRead) {
   this.title = title;
@@ -170,6 +205,7 @@ function saveRemoveBookButton(button) {
     toggleIsReadButtons.splice(bookIndex, 1);
     removeBookButtons.splice(bookIndex, 1);
     updateDisplayAfterBookRemoval(bookIndex);
+    updateStatistics();
   });
   removeBookButtons.push(button);
 }
@@ -184,6 +220,7 @@ function saveToggleIsReadButton(button) {
       library[bookIndex].isRead = true;
       button.textContent = 'Read';
     }
+    updateStatistics();
   });
   toggleIsReadButtons.push(button);
 }
