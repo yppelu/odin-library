@@ -365,8 +365,8 @@ body {
   font-weight: 400;
 
   border: 1px solid var(--input-border-color);
-  margin-left: 1ch;
-  padding: 0 1ch;
+  margin-left: 1rem;
+  padding: 0 1rem;
   height: 2rem;
 }
 
