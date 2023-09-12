@@ -183,13 +183,6 @@ function createRemoveBookButton() {
   button.classList.add('library-body__remove-book-btn');
   button.setAttribute('type', 'button');
 
-  const removeIcon = document.createElement('img');
-  removeIcon.classList.add('library-body__remove-book-icon');
-  removeIcon.setAttribute('src', './images/trash-can.svg');
-  removeIcon.setAttribute('alt', 'Remove the book');
-
-  button.append(removeIcon);
-
   saveRemoveBookButton(button);
 
   return button;
@@ -213,8 +206,7 @@ function createTableData(book, bookProperty) {
 
 function createToggleIsReadButton(isRead) {
   const toggleIsReadButton = document.createElement('button');
-
-  toggleIsReadButton.classList.add('library-body__status-btn');
+  toggleIsReadButton.classList.add('button');
   toggleIsReadButton.setAttribute('type', 'button');
   toggleIsReadButton.textContent = isRead ? 'Read' : 'Not read';
 
