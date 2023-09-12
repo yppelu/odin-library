@@ -104,6 +104,8 @@ h6 {
   --btn-bg-color: #FFFFFF;
   --btn-bg-color-hover: none;
   --btn-border-color: #D1D5DB;
+  --btn-text-color: inherit;
+  --form-wrapper-bg-color: #11182750;
   --heading-color: #1F2937;
   --input-bg-color: none;
   --input-bg-color-focus: none;
@@ -123,6 +125,7 @@ h6 {
   --btn-bg-color-hover: #6B7280;
   --btn-border-color: none;
   --btn-text-color: #E5E7EB;
+  --form-wrapper-bg-color: #00000075;
   --heading-color: #E5E7EB;
   --input-bg-color: #CDD3DF;
   --input-bg-color-focus: #E5E7EB;
@@ -371,7 +374,7 @@ body {
 /* Add book Form Styles */
 
 .add-book-form-wrapper {
-  backdrop-filter: blur(10px);
+  background-color: var(--form-wrapper-bg-color);
   position: fixed;
   inset: 0 0 0 0;
 }
@@ -379,7 +382,6 @@ body {
 .add-book-form {
   background-color: var(--body-bg-color);
   border-radius: 7.5px;
-  box-shadow: 0 0 10px var(--block-shadow-color);
 
   position: absolute;
   top: 50%;
