@@ -325,7 +325,6 @@ body {
   min-width: 130px;
 }
 
-.library-body__table-row>.library-body__table-element:nth-of-type(4),
 .library-body__table-row>.library-body__table-element:nth-of-type(5) {
   text-align: center;
 }
