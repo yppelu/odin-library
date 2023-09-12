@@ -130,6 +130,14 @@ addBookFormWrapper.addEventListener('click', (e) => {
   }
 });
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    if (!addBookFormWrapper.classList.contains('hidden')) {
+      closeForm();
+    }
+  }
+});
+
 updateStatistics();
 
 function Book(title, author, pages, isRead) {
