@@ -166,8 +166,7 @@ function createBookTableRow(book) {
   tableRow.classList.add('library-body__table-row');
 
   const bookProperties = Object.keys(book);
-  const bookPropertiesAmount = bookProperties.length;
-  for (let i = 0; i < bookPropertiesAmount; i++) {
+  for (let i = 0; i < bookProperties.length; i++) {
     const tableData = createTableData(book, bookProperties[i]);
     tableRow.append(tableData);
   }
