@@ -401,6 +401,10 @@ body {
   width: max-content;
 }
 
+.add-book-form__label-text {
+  margin-bottom: 0.5rem;
+}
+
 .add-book-form__input {
   appearance: none;
   background-color: var(--input-bg-color);
@@ -409,9 +413,9 @@ body {
   font-weight: 400;
 
   border: 1px solid var(--input-border-color);
-  margin-left: 1rem;
   padding: 0 1rem;
   height: 2rem;
+  width: 30ch;
 }
 
 .add-book-form__input:focus {
