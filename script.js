@@ -147,6 +147,10 @@ function Book(title, author, pages, isRead) {
   this.isRead = isRead;
 }
 
+Book.prototype.toggleIsRead = function () {
+  this.isRead = !this.isRead;
+};
+
 function closeForm() {
   addBookFormWrapper.classList.add('hidden');
   addBookForm.reset();
@@ -160,8 +164,11 @@ function createBook() {
 function createBookTableRow(book) {
   const tableRow = document.createElement('tr');
   tableRow.classList.add('library-body__table-row');
-  for (let bookProperty in book) {
-    const tableData = createTableData(book, bookProperty);
+
+  const bookProperties = Object.keys(book);
+  const bookPropertiesAmount = bookProperties.length;
+  for (let i = 0; i < bookPropertiesAmount; i++) {
+    const tableData = createTableData(book, bookProperties[i]);
     tableRow.append(tableData);
   }
 
@@ -231,13 +238,8 @@ function saveRemoveBookButton(button) {
 function saveToggleIsReadButton(button) {
   button.addEventListener('click', () => {
     const bookIndex = toggleIsReadButtons.indexOf(button);
-    if (library[bookIndex].isRead) {
-      library[bookIndex].isRead = false;
-      button.textContent = 'Not read';
-    } else {
-      library[bookIndex].isRead = true;
-      button.textContent = 'Read';
-    }
+    library[bookIndex].toggleIsRead();
+    button.textContent = (button.textContent === 'Read') ? 'Not read' : 'Read';
     updateStatistics();
   });
   toggleIsReadButtons.push(button);
