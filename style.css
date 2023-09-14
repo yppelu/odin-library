@@ -97,7 +97,7 @@ h6 {
 
 /* Overall styles */
 
-.light-mode {
+.light-scheme {
   --block-border-color: #E5E7EB;
   --shadow-color: #E5E7EB;
   --body-bg-color: #F9F9F9;
@@ -117,7 +117,7 @@ h6 {
   --table-border-color: #D1D5DB;
 }
 
-.dark-mode {
+.dark-scheme {
   --block-border-color: #1F2937;
   --shadow-color: none;
   --body-bg-color: #111827;

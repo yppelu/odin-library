@@ -8,7 +8,7 @@ const changeThemeMoonIcon = document.querySelector('.header__change-theme-moon-i
 setInitialColorScheme();
 
 changeThemeButton.addEventListener('click', () => {
-  if (root.classList.contains('dark-mode')) {
+  if (root.classList.contains('dark-scheme')) {
     setChosenColorScheme('light');
   } else {
     setChosenColorScheme('dark');
@@ -34,11 +34,11 @@ function getDefaultColorScheme() {
 
 function setChosenColorScheme(colorSchemeName) {
   if (colorSchemeName === 'dark') {
-    root.classList.replace('light-mode', 'dark-mode');
+    root.classList.replace('light-scheme', 'dark-scheme');
     changeThemeSunIcon.classList.add('hidden');
     changeThemeMoonIcon.classList.remove('hidden');
   } else {
-    root.classList.replace('dark-mode', 'light-mode');
+    root.classList.replace('dark-scheme', 'light-scheme');
     changeThemeMoonIcon.classList.add('hidden');
     changeThemeSunIcon.classList.remove('hidden');
   }
@@ -49,10 +49,10 @@ function setChosenColorScheme(colorSchemeName) {
 function setInitialColorScheme() {
   const colorSchemeName = getDefaultColorScheme();
   if (colorSchemeName === 'dark') {
-    root.classList.add('dark-mode');
+    root.classList.add('dark-scheme');
     changeThemeMoonIcon.classList.remove('hidden');
   } else {
-    root.classList.add('light-mode');
+    root.classList.add('light-scheme');
     changeThemeSunIcon.classList.remove('hidden');
   }
 
